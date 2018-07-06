@@ -1,0 +1,97 @@
+body{
+	background: rgba(255, 54, 83, 0.87) none repeat scroll 0% 0%;
+}
+
+.parent {
+	display: flex;
+	flex-direction: row;
+	justify-content:center;
+	height: 1000px;
+}
+
+.parent > div {
+	padding: 2%;
+	border: 2px solid red;
+}
+
+.childone{
+	width: 15%;
+	margin: 3%;
+
+	height: 20%;
+}
+
+.childtwo{
+	width: 70%;
+	height: 70%;
+	padding: 2%;
+	margin: 3%;
+}
+
+#unique{
+	text-align: center;
+}
+
+/*for small screen mobiles*/
+@media only screen and (min-width: 320px) and (max-width: 480px){
+.parent {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	
+
+}
+
+.parent > div {
+	padding: 2%;
+	border: 1px solid red;
+}
+
+.childone{
+	width: 80%;
+	padding: 2%;
+	margin-left:40%; 
+	margin: 3%;
+	height: 20%;
+}
+
+.childtwo{
+	width: 80%;
+	height: 100%;
+	padding: 2%;
+	margin: 3%;
+
+}
+
+
+}
+
+
+@media only screen and (min-width: 481px) and (max-width: 760px){
+.parent {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.parent > div {
+	padding: 2%;
+	border: 2px solid red;
+}
+
+.childone{
+	width: 50%;
+	padding: 2%;
+	margin: 3%;
+	height: 20%;
+}
+
+.childtwo{
+	width: 50%;
+	height: 100%;
+	padding: 2%;
+	margin: 3%;
+}
+
+
+}
