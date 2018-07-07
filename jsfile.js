@@ -12,8 +12,12 @@ function getFile(file,callback){
 }
 
 getFile("text.json",function(text){
- let data=JSON.parse(text);
- console.log(data);
-
+ var data=JSON.parse(text);
+ 	career(data.career);
 }
 )
+
+function career(text){
+   
+    document.getElementById("childtwo").innerHTML = text.info;
+}
