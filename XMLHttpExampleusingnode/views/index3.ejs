@@ -1,0 +1,36 @@
+<html>
+	<head>
+	</head>
+	
+		<body>
+		<p id="unique"> holla </p> 
+		<button onclick="holla()" >CLICK ME</buttom>
+	</body>
+
+<script type="text/javascript" >
+
+	//get request with params
+
+
+
+	//call this on button click
+       function holla(){
+		
+		var url = "/new1";
+var params = "somevariable=somevalue&anothervariable=anothervalue";
+var http = new XMLHttpRequest();
+
+http.open("GET", url+"?"+params, true);
+console.log(url+"?"+params);
+http.onreadystatechange = function()
+{
+    if(http.readyState == 4 && http.status == 200) {
+        alert(http.responseText);
+    }
+}
+http.send(null);
+
+	}
+    </script>
+
+</html>
