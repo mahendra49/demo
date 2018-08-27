@@ -1,0 +1,40 @@
+<html>
+	<head>
+	</head>
+	
+		<body>
+		<p id="unique"> holla </p> 
+		<button onclick="holla()" >CLICK ME</buttom>
+	</body>
+
+<script type="text/javascript" >
+	//call this on button click
+       function holla(){
+		console.log("here");
+	//xml request object
+	var myRequest = new XMLHttpRequest();
+	//where to send 
+	myRequest.open('GET', '/new');
+	//call this when request is processed
+	myRequest.onreadystatechange = function () { 
+    // 4. check if the request has a readyState of 4, which indicates the server has responded (complete)
+    if (myRequest.readyState === 4) {
+        // 5. insert the text sent by the server into the HTML of the 'ajax-content'
+	var obj = JSON.parse(myRequest.responseText);   
+	console.log(obj);   
+	//change some document object ..can be anything	
+	document.getElementById('unique').innerHTML = obj.upvotes;
+    }
+};
+
+myRequest.send();
+
+
+
+
+	
+	}
+	           
+    </script>
+
+</html>
