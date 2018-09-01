@@ -63,6 +63,32 @@ app.post("/post",function(req,res){
 
 });
 
+//some jquery on client side
+/*
+	$(document).ready(function(){
+   $("#commentsubmit").on("submit",function(e){
+        e.preventDefault();
+        var action1=e.currentTarget.action;
+        
+        console.log($("#currentsubmit").serialize());
+        
+        $.ajax({
+            url:action1,
+            type:'post',
+            dataType:'json',
+            data: $("#commentsubmit").serialize(),
+            success: function(data) {
+              var ret = JSON.stringify(data);
+              console.log('Success: '+JSON.stringify(data))
+            },
+            error:function(err){
+                console.log("error");
+            }
+        })
+   });
+});
+*/
+
 
 app.listen(3000,function() {
     console.log("server started");
