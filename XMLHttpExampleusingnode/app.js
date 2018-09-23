@@ -89,6 +89,34 @@ app.post("/post",function(req,res){
 });
 */
 
+//ajax for files or any form data ...this is really useful
+$(document).ready(function (e) {
+    $('#imageUploadForm').on('submit',(function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+
+        $.ajax({
+            type:'POST',
+            url: $(this).attr('action'),
+            data:formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            success:function(data){
+                console.log("success");
+                console.log(data);
+            },
+            error: function(data){
+                console.log("error");
+                console.log(data);
+            }
+        });
+    }));
+
+    $("#ImageBrowse").on("change", function() {
+        $("#imageUploadForm").submit();
+    });
+});
 
 app.listen(3000,function() {
     console.log("server started");
